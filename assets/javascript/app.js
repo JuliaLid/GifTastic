@@ -7,7 +7,9 @@ var topics = ["Harry Potter", "Hermoine Granger", "Ron Weasley", "Hagrid ", "Dra
 //==========================================================
 
 function displayGifs() {
- 	$("#gif-display").empty();
+
+    $("#gif-display").empty().addClass("gifs");
+   
 
     var gifInfo = $(this).attr("data-name");
 	var queryURL = "http://api.giphy.com/v1/gifs/search?q="+gifInfo +"&api_key=o6xLovKNu1K122xTxtBuODnzjDbFRKQD&limit=10"
@@ -44,6 +46,7 @@ function displayGifs() {
          		 gifDiv.append(pOne);
        
         	    $("#gif-display").prepend(gifDiv);
+                $("#gifLogo").show();  
 		    });
 
 
@@ -67,7 +70,9 @@ function displayGifs() {
 
 function renderButtons() {
 
-	$("#buttons").empty();
+	$("#buttons").empty();   
+    $("#gifLogo").hide();    
+    $("#add-character").val(""); //Resetting the input
 	
 	for (var i = 0; i < topics.length; i++) {
 		var a = $("<button>");
@@ -81,8 +86,13 @@ function renderButtons() {
 $("#add").on("click", function(event) {
 	event.preventDefault();
 	var character = $("#add-character").val().trim();
-    topics.push(character);
-    renderButtons();
+
+    if(character.length >=1){
+        topics.push(character);
+        renderButtons();
+    } else{
+        alert ("Please enter a new character");
+    }
 });
 
 
