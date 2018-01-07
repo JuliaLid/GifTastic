@@ -73,7 +73,7 @@ function displayGifs() {
 function renderButtons() {
 
 	$("#buttons").empty();   
-    $("#gifLogo").hide();    
+  
     $("#add-character").val(""); //Resetting the input
 	
 	for (var i = 0; i < topics.length; i++) {
