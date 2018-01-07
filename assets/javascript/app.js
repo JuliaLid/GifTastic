@@ -7,7 +7,7 @@ var topics = ["Harry Potter", "Hermoine Granger", "Ron Weasley", "Hagrid ", "Dra
 //==========================================================
 
 function displayGifs() {
-
+ 	$("#instructions").hide();
     $("#gif-display").empty().addClass("gifs");
    
 
@@ -40,10 +40,12 @@ function displayGifs() {
    		  	 		"class":"character"
    		  	 	});
    		  	        
-         		 gifDiv.append(gifImage);
-                
+         		                
     	   		 var pOne = $("<p>").text("Rating: " + rating);
-         		 gifDiv.append(pOne);
+         		
+                 var combinedGif = $("<div class=combined>")
+                 combinedGif.append(gifImage).append(pOne);
+                 gifDiv.append(combinedGif)
        
         	    $("#gif-display").prepend(gifDiv);
                 $("#gifLogo").show();  
