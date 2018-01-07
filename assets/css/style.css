@@ -25,7 +25,7 @@ body {
 #title{
   grid-column: 1/4;
   grid-row: 1/2;
-  background: url("../images/Header.jpg") no-repeat center; 
+  background: url("../images/title.jpg") no-repeat center; 
   margin-bottom: 30px;
   background-color: black;
 }
