@@ -26,9 +26,9 @@ function displayGifs() {
             			
    			$.each(returnObject,function(index,value){
    		
-   				var stillImage = this.images.original_still.url;
+   				var stillImage = this.images.fixed_height_still.url;
 
-   				var animatedImage =  this.images.original.url;
+   				var animatedImage =  this.images.fixed_height.url;
 
    				var rating = this.rating;
 
